@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 import random
-
-# Generate random number
 number = random.randint(-10000, 10000)
 
 # Calculate last digit (handles negative numbers correctly)
@@ -10,8 +8,7 @@ if number >= 0:
 else:
     last_digit = -(abs(number) % 10)
 
-# Analyze and print result
-print(f"Number: {number}")
+# Print result based on requirements
 if last_digit == 0:
     print(f"Last digit of {number} is {last_digit} and is 0")
 elif last_digit > 5:
