@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-"""Defines a class Square with validated private size attribute."""
+"""Module that defines a Square class with size validation."""
 
 
 class Square:
-    """Class that defines a square."""
+    """Represents a square."""
 
     def __init__(self, size=0):
-        """Initialize the square with validated private size."""
-        if not isinstance(size, int):
+        """
+        Initialize a new square.
+
+        A
