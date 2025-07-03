@@ -1,21 +1,14 @@
 #!/usr/bin/python3
-"""
-This module defines a Rectangle class that keeps track of the
-number of instances and allows calculation of area and perimeter.
-It also provides string representations using '#' characters.
-"""
+"""Defines a Rectangle class that tracks instances and calculates dimensions."""
 
 
 class Rectangle:
-    """Represents a rectangle with width and height.
+    """Represents a rectangle with width, height, and instance tracking."""
 
-    Tracks the number of instances created and deleted.
-    """
-
-    number_of_instances = 0  # Corrected variable name (was number_of_instances)
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
-        """Initialize the rectangle with optional width and height."""
+        """Initialize rectangle with optional width and height."""
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
@@ -27,7 +20,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """Set the width, ensuring it's a non-negative integer."""
+        """Set the width with validation."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -41,7 +34,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """Set the height, ensuring it's a non-negative integer."""
+        """Set the height with validation."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -59,17 +52,17 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return the informal string representation using '#'."""
+        """Return printable representation using '#' characters."""
         if self.__width == 0 or self.__height == 0:
             return ""
         lines = ["#" * self.__width for _ in range(self.__height)]
         return "\n".join(lines)
 
     def __repr__(self):
-        """Return the official string representation."""
+        """Return official string representation of the rectangle."""
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
-        """Print message when instance is deleted and decrement counter."""
+        """Print deletion message and decrement instance counter."""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
