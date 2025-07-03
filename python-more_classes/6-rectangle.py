@@ -5,9 +5,10 @@ number of instances and allows calculation of area and perimeter.
 It also provides string representations using '#' characters.
 """
 
+
 class Rectangle:
     """Represents a rectangle with width and height.
-    
+
     Tracks the number of instances created and deleted.
     """
 
@@ -61,11 +62,14 @@ class Rectangle:
         """Return the informal string representation using '#'."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join(["#" * self.__width for _ in range(self.__height)])
+        lines = ["#" * self.__width for _ in range(self.__height)]
+        return "\n".join(lines)
 
     def __repr__(self):
         """Return the official string representation to recreate the instance."""
-        return f"Rectangle({self.__width}, {self.__height})"
+        return (
+            f"Rectangle({self.__width}, {self.__height})"
+        )
 
     def __del__(self):
         """Print a message when the instance is deleted and decrement the counter."""
