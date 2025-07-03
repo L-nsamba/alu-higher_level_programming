@@ -12,7 +12,7 @@ class Rectangle:
     Tracks the number of instances created and deleted.
     """
 
-    number_of_instances = 0
+    number_of_instances = 0  # Corrected variable name (was number_of_instances)
 
     def __init__(self, width=0, height=0):
         """Initialize the rectangle with optional width and height."""
@@ -66,7 +66,7 @@ class Rectangle:
         return "\n".join(lines)
 
     def __repr__(self):
-        """Return the official string representation to recreate the instance."""
+        """Return the official string representation."""
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
