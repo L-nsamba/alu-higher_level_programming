@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-"""Defines a Rectangle class that tracks instances and calculates dimensions."""
+"""Defines a Rectangle class with instance tracking and dimension calculations.
+"""
 
 
 class Rectangle:
-    """Represents a rectangle with width, height, and instance tracking."""
+    """Represents a rectangle with width, height, and instance tracking.
+    """
 
     number_of_instances = 0
 
