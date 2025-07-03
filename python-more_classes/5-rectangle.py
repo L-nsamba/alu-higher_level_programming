@@ -3,7 +3,8 @@
 
 
 class Rectangle:
-    """Rectangle class with width, height, area, perimeter, str, repr, and del."""
+"""Rectangle class with width, height, area, perimeter,
+string representation, and delete message."""
 
     def __init__(self, width=0, height=0):
         """Initialize rectangle with optional width and height."""
