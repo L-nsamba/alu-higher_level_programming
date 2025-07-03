@@ -68,7 +68,8 @@ class Rectangle:
     def __repr__(self):
         """Return the official string representation to recreate the instance."""
         return (
-            f"Rectangle({self.__width}, {self.__height})"
+            "Rectangle({}, {})"
+            .format(self.__width, self.__height)
         )
 
     def __del__(self):
