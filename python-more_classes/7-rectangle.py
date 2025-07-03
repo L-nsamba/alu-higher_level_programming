@@ -3,18 +3,18 @@
 
 class Rectangle:
     """Represents a rectangle with width and height attributes.
-    
+
     Attributes:
         number_of_instances (int): Counts active Rectangle instances.
         print_symbol (any): Symbol used for string representation.
     """
-    
+
     number_of_instances = 0
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Initializes a new Rectangle instance.
-        
+
         Args:
             width (int): Width of rectangle (default 0).
             height (int): Height of rectangle (default 0).
