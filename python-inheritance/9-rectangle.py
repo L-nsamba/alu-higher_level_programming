@@ -16,8 +16,10 @@ class Rectangle(BaseGeometry):
         Initialize a Rectangle with width and height
 
         Args:
-            width (int): The width of the rectangle (must be positive integer)
-            height (int): The height of the rectangle (must be positive integer)
+            width (int):
+	    The width of the rectangle (must be positive integer)
+            height (int):
+	    The height of the rectangle (must be positive integer)
         """
         self.integer_validator("width", width)
         self.integer_validator("height", height)
