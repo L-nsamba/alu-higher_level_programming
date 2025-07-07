@@ -21,3 +21,12 @@ class Square(Rectangle):
         self.integer_validator("size", size)
         self.__size = size
         super().__init__(size, size)
+
+    def __str__(self):
+        """
+        Return string representation of the square
+
+        Returns:
+            str: Square description in format [Square] <width>/<height>
+        """
+        return "[Square] {}/{}".format(self.__size, self.__size)
