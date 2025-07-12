@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Module that provides file reading functionality.
+"""
+
+
 def read_file(filename=""):
     """
     Reads a text file (UTF-8) and prints it to stdout.
