@@ -3,7 +3,8 @@
 
 
 class Student:
-    """Represents a student with basic information and JSON serialization."""
+    """Represents a student with basic information
+       and JSON serialization."""
 
     def __init__(self, first_name, last_name, age):
         """Initializes a new Student instance.
