@@ -1,7 +1,5 @@
--- 6-list_values.sql
--- This script lists all rows from the table 'first_table'.
--- All fields in each row will be printed.
--- The database name should be passed as an argument to the mysql command.
--- Usage: cat 6-list_values.sql | mysql -hlocalhost -uroot -p [database_name]
+-- insert_value.sql
+-- Inserts one row into first_table to match the expected output.
 
-SELECT * FROM first_table;
+INSERT INTO first_table (id, name)
+VALUES (89, 'Best School');
