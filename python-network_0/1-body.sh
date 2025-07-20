@@ -1,3 +1,3 @@
 #!/bin/bash
-# Sends GET request, shows body only if status is 200
-curl -s -o /dev/null -w "%{http_code}" "$1" | grep -q 200 && curl -s "$1"
+# Sends GET request, displays body only for 200 status code
+curl -sL -w "%{http_code}" "$1" -o /tmp/body | grep -q 200 && cat /tmp/body
