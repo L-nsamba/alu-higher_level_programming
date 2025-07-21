@@ -11,7 +11,7 @@ if __name__ == "__main__":
     Fetches the status from https://alu-intranet.hbtn.io/status
     and displays the response body information.
     """
-    url = "http://0.0.0.0:5050/status"
+    url = "https://intranet.hbtn.io/status"
 
     with urllib.request.urlopen(url) as response:
         body = response.read()
