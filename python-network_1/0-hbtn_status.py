@@ -10,7 +10,8 @@ import urllib.request
 
 
 def fetch_status():
-    """Sends a request to the specified URL and prints the formatted response."""
+    """Sends a request to the specified URL and
+       prints the formatted response."""
     url = "https://intranet.hbtn.io/status"
     with urllib.request.urlopen(url) as response:
         body = response.read()
