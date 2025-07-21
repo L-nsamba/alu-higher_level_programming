@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """
-This module sends a request to a URL and displays the X-Request-Id header value.
-It takes a URL as a command line argument and uses urllib to make the request.
+This module sends a request to a URL
+and displays the X-Request-Id header value.
+It takes a URL as a command line argument
+and uses urllib to make the request.
 """
 
 import urllib.request
