@@ -1,11 +1,16 @@
 #!/usr/bin/python3
-"""Fetches a URL and displays the response body content, type, and UTF-8 decoding."""
+"""
+Fetches https://intranet.hbtn.io/status and displays:
+- type of the response
+- raw byte content
+- decoded utf-8 content
+"""
 
 import urllib.request
 
 
 def fetch_status():
-    """Fetches and prints the body of the response from a given URL."""
+    """Sends a request to the specified URL and prints the formatted response."""
     url = "https://intranet.hbtn.io/status"
     with urllib.request.urlopen(url) as response:
         body = response.read()
