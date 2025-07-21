@@ -1,20 +1,15 @@
 #!/usr/bin/python3
 """
-This module sends a request to a URL and displays the body of the response
-decoded in UTF-8. It handles HTTPError exceptions and displays error codes.
+This module fetches https://alu-intranet.hbtn.io/status using the requests
+module and displays the body response with type and content information.
 """
 
-import urllib.request
-import urllib.error
-import sys
+import requests
 
 
 if __name__ == "__main__":
-    url = sys.argv[1]
-
-    try:
-        with urllib.request.urlopen(url) as response:
-            body = response.read()
-            print(body.decode('utf-8'))
-    except urllib.error.HTTPError as e:
-        print("Error code: {}".format(e.code))
+    url = "https://alu-intranet.hbtn.io/status"
+    response = requests.get(url)
+    print("Body response:")
+    print("\t- type: {}".format(type(response.text)))
+    print("\t- content: {}".format(response.text))
