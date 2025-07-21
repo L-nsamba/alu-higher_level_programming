@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """
-This module sends a POST request to search for users with a letter parameter
-and displays the results in JSON format, handling various response scenarios.
+This module sends a POST request to search
+for users with a letter parameter
+and displays the results in JSON format,
+handling various response scenarios.
 """
 
 import requests
