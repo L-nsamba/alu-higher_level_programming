@@ -1,15 +1,16 @@
 #!/usr/bin/python3
+"""A script that
+- fetches https://intranet.hbtn.io/status.
+- uses urlib package
 """
-This module fetches https://alu-intranet.hbtn.io/status using urllib package.
-It displays the body response with type, content, and utf8 content information.
-"""
-import urllib.request
 
 
 if __name__ == '__main__':
-    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
-        content = response.read()
+    import urllib.request
+
+    with urllib.request.urlopen('https://intranet.hbtn.io/status') as res:
+        content = res.read()
         print("Body response:")
         print("\t- type: {}".format(type(content)))
         print("\t- content: {}".format(content))
-        print("\t- utf8 content: {}".format(content.decode("utf-8")))
+        print("\t- utf8 content: {}".format(content.decode('utf-8')))
