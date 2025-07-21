@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 """
-This module sends a POST request to search
-for users with a letter parameter
-and displays the results in JSON format,
-handling various response scenarios.
+This module sends a POST request to search for users with a letter parameter
+and displays the results in JSON format, handling various response scenarios.
 """
 
 import requests
@@ -24,8 +22,9 @@ if __name__ == "__main__":
     try:
         json_response = response.json()
         if json_response:
-            print("[{}] {}".format(json_response.get('id'),
-	    json_response.get('name')))
+            user_id = json_response.get('id')
+            user_name = json_response.get('name')
+            print("[{}] {}".format(user_id, user_name))
         else:
             print("No result")
     except ValueError:
