@@ -8,17 +8,11 @@ Import the function:
     >>> text_indentation = __import__('5-text_indentation').text_indentation
 
 Test with basic text containing punctuation:
-    >>> text_indentation("Hello.\tWorld?")
+    >>> text_indentation("Hello. World?")
     Hello.
     <BLANKLINE>
     World?
     <BLANKLINE>
-
-Test with tab after punctuation:
-    >>> text_indentation("Hello.\tWorld")
-    Hello.
-    <BLANKLINE>
-    World
 
 Test with text containing colon:
     >>> text_indentation("Question: Answer.")
@@ -35,6 +29,12 @@ Test with spaces after punctuation:
     <BLANKLINE>
     Test:
     <BLANKLINE>
+
+Test with tab after punctuation:
+    >>> text_indentation("Hello.\tWorld")
+    Hello.
+    <BLANKLINE>
+    World
 
 Test with empty string:
     >>> text_indentation("")
@@ -103,17 +103,6 @@ Test with non-string input (list):
         ...
     TypeError: text must be a string
 
-Test with complex text (similar to the main example):
-    >>> text_indentation("Lorem ipsum dolor sit amet. Consectetur? Adipiscing: elit.")
-    Lorem ipsum dolor sit amet.
-    <BLANKLINE>
-    Consectetur?
-    <BLANKLINE>
-    Adipiscing:
-    <BLANKLINE>
-    elit.
-    <BLANKLINE>
-
 Test with only special characters:
     >>> text_indentation(".:?")
     .
@@ -131,3 +120,14 @@ Test with spaces and special characters:
     <BLANKLINE>
     :
     <BLANKLINE>
+
+Test edge case - text ending with space after punctuation:
+    >>> text_indentation("Hello. ")
+    Hello.
+    <BLANKLINE>
+
+Test with mixed whitespace:
+    >>> text_indentation("Test.\t \nNext")
+    Test.
+    <BLANKLINE>
+    Next

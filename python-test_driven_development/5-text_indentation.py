@@ -29,7 +29,7 @@ def text_indentation(text):
         if text[i] in ".?:":
             print("\n")
             i += 1
-            # Skip any whitespace that comes after the punctuation
+            # Skip any spaces or tabs after punctuation
             while i < len(text) and text[i] in ' \t':
                 i += 1
         else:
