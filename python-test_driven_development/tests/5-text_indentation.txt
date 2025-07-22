@@ -1,0 +1,142 @@
+#!/usr/bin/python3
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test simple sentence with period:
+    >>> text_indentation("Hello world.")
+    Hello world.
+    <BLANKLINE>
+
+Test sentence with question mark:
+    >>> text_indentation("How are you?")
+    How are you?
+    <BLANKLINE>
+
+Test sentence with colon:
+    >>> text_indentation("Listen:")
+    Listen:
+    <BLANKLINE>
+
+Test multiple punctuation marks:
+    >>> text_indentation("Hello. How are you? Listen:")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    Listen:
+    <BLANKLINE>
+
+Test with spaces after punctuation:
+    >>> text_indentation("Hello.   World")
+    Hello.
+    <BLANKLINE>
+    World
+
+Test with multiple spaces after punctuation:
+    >>> text_indentation("Test.     More text")
+    Test.
+    <BLANKLINE>
+    More text
+
+Test empty string:
+    >>> text_indentation("")
+
+Test string with only spaces:
+    >>> text_indentation("   ")
+       
+
+Test string without special characters:
+    >>> text_indentation("Hello world")
+    Hello world
+
+Test consecutive punctuation:
+    >>> text_indentation("What..?:")
+    What.
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+Test with newlines in original text:
+    >>> text_indentation("Hello.\nWorld")
+    Hello.
+    <BLANKLINE>
+    <BLANKLINE>
+    World
+
+Test with tabs:
+    >>> text_indentation("Hello.\tWorld")
+    Hello.
+    <BLANKLINE>
+    	World
+
+Test mixed case:
+    >>> text_indentation("First. Second? Third:")
+    First.
+    <BLANKLINE>
+    Second?
+    <BLANKLINE>
+    Third:
+    <BLANKLINE>
+
+Test spaces at beginning:
+    >>> text_indentation("   Hello. World")
+       Hello.
+    <BLANKLINE>
+    World
+
+Test ending with punctuation:
+    >>> text_indentation("End.")
+    End.
+    <BLANKLINE>
+
+Test ending with punctuation and spaces:
+    >>> text_indentation("End.   ")
+    End.
+    <BLANKLINE>
+
+Test TypeError for integer:
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Test TypeError for None:
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Test TypeError for list:
+    >>> text_indentation(["Hello", "world"])
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Test TypeError for boolean:
+    >>> text_indentation(True)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Test missing argument:
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Test long text with multiple sentences:
+    >>> text_indentation("First sentence. Second sentence? Third sentence:")
+    First sentence.
+    <BLANKLINE>
+    Second sentence?
+    <BLANKLINE>
+    Third sentence:
+    <BLANKLINE>
+
+Test special characters (not punctuation):
+    >>> text_indentation("Hello! @#$%^&*()_+-= World")
+    Hello! @#$%^&*()_+-= World
+
+Test punctuation with no following text:
+    >>> text_indentation("Done.")
+    Done.
+    <BLANKLINE>
