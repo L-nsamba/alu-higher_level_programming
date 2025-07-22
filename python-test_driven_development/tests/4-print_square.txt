@@ -1,0 +1,109 @@
+#!/usr/bin/python3
+
+    >>> print_square = __import__('4-print_square').print_square
+
+Test normal case with size 4:
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+Test with size 2:
+    >>> print_square(2)
+    ##
+    ##
+
+Test with size 1:
+    >>> print_square(1)
+    #
+
+Test with size 0 (empty square):
+    >>> print_square(0)
+
+Test with larger size 3:
+    >>> print_square(3)
+    ###
+    ###
+    ###
+
+Test with size 5:
+    >>> print_square(5)
+    #####
+    #####
+    #####
+    #####
+    #####
+
+Test TypeError for string:
+    >>> print_square("5")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Test TypeError for float:
+    >>> print_square(3.5)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Test TypeError for negative float:
+    >>> print_square(-2.5)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Test TypeError for None:
+    >>> print_square(None)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Test TypeError for list:
+    >>> print_square([4])
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Test TypeError for boolean:
+    >>> print_square(True)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Test ValueError for negative integer:
+    >>> print_square(-1)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+Test ValueError for negative integer -5:
+    >>> print_square(-5)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+Test ValueError for negative integer -10:
+    >>> print_square(-10)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+Test missing argument:
+    >>> print_square()
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+Test TypeError for dictionary:
+    >>> print_square({"size": 4})
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Test TypeError for tuple:
+    >>> print_square((4,))
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Test with large size:
+    >>> print_square(10)
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
