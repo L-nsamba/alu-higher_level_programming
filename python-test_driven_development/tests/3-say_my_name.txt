@@ -113,4 +113,4 @@ Test with newline characters in names:
 
 Test with tab characters in names:
     >>> say_my_name("John\t", "Smith")
-    My name is John	Smith
+    My name is John	 Smith
