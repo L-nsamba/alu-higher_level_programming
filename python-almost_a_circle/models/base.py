@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Defines the Base class."""
+
+
 class Base:
     """Base class for all other classes in this project.
 
@@ -17,7 +19,8 @@ class Base:
 
         Args:
             id (int, optional): The identity of the new instance.
-            If None, increments __nb_objects and uses that as id.
+                               If None, increments __nb_objects and
+                               uses that as id.
         """
         if id is not None:
             self.id = id
