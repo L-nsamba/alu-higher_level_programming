@@ -1,76 +1,88 @@
 #!/usr/bin/python3
-"""Square class module."""
+"""Create a Square class for the work"""
+
 
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Square class that inherits from Rectangle."""
-
+    """Create a Square class for the work"""
     def __init__(self, size, x=0, y=0, id=None):
-        """Initialize Square instance.
+        """
+        Create a Square class for the work
 
-        Args:
-            size (int): Size of the square.
-            x (int): X coordinate of the square.
-            y (int): Y coordinate of the square.
-            id (int): Id of the square.
+        :param size: The size of the square
+        :param x: The x coordinate of the square
+        :param y: The y coordinate of the square
+        :param id: The id of the square
         """
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        """Get size of the square."""
+        """
+        Return the size of the square
+
+        :return: The size of the square
+        """
         return self.width
 
     @size.setter
     def size(self, value):
-        """Set size of the square."""
+        """
+        Set the size of the square
+
+        :param value: The size of the square
+        """
         self.width = value
         self.height = value
 
-    def update(self, *args, **kwargs):
-        """Update the square attributes."""
-        if args and len(args) != 0:
-            a = 0
-            for arg in args:
-                if a == 0:
-                    if arg is None:
-                        self.__init__(self.size, self.x, self.y)
-                    else:
-                        self.id = arg
-                elif a == 1:
-                    self.size = arg
-                elif a == 2:
-                    self.x = arg
-                elif a == 3:
-                    self.y = arg
-                a += 1
+    def __str__(self):
+        """
+        Return the string representation of the square
 
-        elif kwargs and len(kwargs) != 0:
-            for k, v in kwargs.items():
-                if k == "id":
-                    if v is None:
-                        self.__init__(self.size, self.x, self.y)
-                    else:
-                        self.id = v
-                elif k == "size":
-                    self.size = v
-                elif k == "x":
-                    self.x = v
-                elif k == "y":
-                    self.y = v
+        :return: The string representation of the square
+        """
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
+
+    def update(self, *args, **kwargs):
+        """
+        Update the square
+
+        :return: The updated square
+        """
+        if len(args) != 0:
+            try:
+                self.id = args[0]
+                self.size = args[1]
+                self.x = args[2]
+                self.y = args[3]
+            except IndexError:
+                pass
+
+        elif len(kwargs) != 0:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            else:
+                self.id
+
+            if "size" in kwargs:
+                self.size = kwargs["size"]
+            else:
+                self.size
+
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            else:
+                self.x
+
+            if "y" in kwargs:
+                self.y = kwargs["y"]
 
     def to_dictionary(self):
-        """Return the dictionary representation of the square."""
-        return {
-            "id": self.id,
-            "size": self.size,
-            "x": self.x,
-            "y": self.y
-        }
+        """
+        Return a dictionary representation of the square
 
-    def __str__(self):
-        """Return string representation of the square."""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
-                                                  self.width)
+        :return: The dictionary representation of the square
+        """
+        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
