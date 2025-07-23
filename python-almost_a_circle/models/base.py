@@ -16,8 +16,8 @@ class Base:
         """Initialize a new Base instance.
 
         Args:
-            id (int, optional): The identity of the new instance. 
-                               If None, increments __nb_objects and uses that as id.
+            id (int, optional): The identity of the new instance.
+            If None, increments __nb_objects and uses that as id.
         """
         if id is not None:
             self.id = id
