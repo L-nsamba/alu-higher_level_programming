@@ -33,7 +33,8 @@ def filter_states():
     cursor = db.cursor()
 
     # Create SQL query using format
-    query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC".format(
+    query = """SELECT * FROM states WHERE BINARY
+             name = '{}' ORDER BY id ASC""".format(
         state_name
     )
 
