@@ -3,8 +3,7 @@
 This script lists all states from the database hbtn_0e_0_usa.
 It takes 3 arguments: mysql username, mysql password and database name.
 The script connects to a MySQL server running on localhost at port 3306.
-Results are sorted in ascending order by states.id
-and displayed as required.
+Results are sorted in ascending order by states.id and displayed as required.
 """
 
 import MySQLdb
@@ -13,7 +12,7 @@ import sys
 def list_states(username, password, db_name):
     """
     Connects to MySQL database and lists all states sorted by id.
-
+    
     Args:
         username (str): MySQL username
         password (str): MySQL password
@@ -28,20 +27,20 @@ def list_states(username, password, db_name):
             passwd=password,
             db=db_name
         )
-
+        
         # Create a cursor object
         cursor = db.cursor()
-
+        
         # Execute SQL query
         cursor.execute("SELECT * FROM states ORDER BY id ASC")
-
+        
         # Fetch all rows
         rows = cursor.fetchall()
-
+        
         # Display results
         for row in rows:
             print(row)
-
+            
     except MySQLdb.Error as e:
         print(f"Error connecting to MySQL: {e}")
     finally:
