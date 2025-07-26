@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
-This script lists all states with names starting with 'N' from the database hbtn_0e_0_usa.
-It takes 3 arguments: mysql username, mysql password and database name.
-The script connects to a MySQL server running on localhost at port 3306.
-Results are sorted in ascending order by states.id and displayed as required.
+This script lists all states with names starting with 'N' from the database
+hbtn_0e_0_usa. It takes 3 arguments: mysql username, mysql password and
+database name. The script connects to a MySQL server running on localhost
+at port 3306. Results are sorted in ascending order by states.id.
 """
 
 import MySQLdb
@@ -32,8 +32,9 @@ def filter_states(username, password, db_name):
         # Create a cursor object
         cursor = db.cursor()
 
-        # Execute SQL query to select states starting with 'N'
-        cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+        # Execute SQL query to select states starting with uppercase 'N'
+        query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
+        cursor.execute(query)
 
         # Fetch all rows
         rows = cursor.fetchall()
