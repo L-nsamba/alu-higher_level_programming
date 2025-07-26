@@ -28,14 +28,8 @@ def delete_states_with_a():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Query and delete all State objects that contain the letter 'a'
-    states_to_delete = session.query(State).filter(
-        State.name.contains('a')
-    ).all()
-
-    # Delete each state
-    for state in states_to_delete:
-        session.delete(state)
+    # Delete all State objects that contain the letter 'a'
+    session.query(State).filter(State.name.contains('a')).delete()
 
     # Commit the changes
     session.commit()
