@@ -19,7 +19,7 @@ def filter_states():
     password = sys.argv[2]
     database = sys.argv[3]
     state_name = sys.argv[4]
-
+    
     # Connect to MySQL server
     db = MySQLdb.connect(
         host="localhost",
@@ -28,25 +28,25 @@ def filter_states():
         passwd=password,
         db=database
     )
-
+    
     # Create cursor object
     cursor = db.cursor()
-
-    # Create SQL query using format
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(
+    
+    # Create SQL query using format with BINARY for case sensitivity
+    query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC".format(
         state_name
     )
-
+    
     # Execute the query
     cursor.execute(query)
-
+    
     # Fetch all results
     results = cursor.fetchall()
-
+    
     # Display results
     for row in results:
         print(row)
-
+    
     # Close cursor and database connection
     cursor.close()
     db.close()
@@ -54,4 +54,3 @@ def filter_states():
 
 if __name__ == "__main__":
     filter_states()
-
