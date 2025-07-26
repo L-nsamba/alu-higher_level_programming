@@ -48,6 +48,8 @@ def filter_cities_by_state():
     city_names = [row[0] for row in results]
     if city_names:
         print(", ".join(city_names))
+    else:
+        print()
 
     # Close cursor and database connection
     cursor.close()
