@@ -9,10 +9,11 @@ Results are sorted in ascending order by states.id and displayed as required.
 import MySQLdb
 import sys
 
+
 def list_states(username, password, db_name):
     """
     Connects to MySQL database and lists all states sorted by id.
-    
+
     Args:
         username (str): MySQL username
         password (str): MySQL password
@@ -27,26 +28,27 @@ def list_states(username, password, db_name):
             passwd=password,
             db=db_name
         )
-        
+
         # Create a cursor object
         cursor = db.cursor()
-        
+
         # Execute SQL query
         cursor.execute("SELECT * FROM states ORDER BY id ASC")
-        
+
         # Fetch all rows
         rows = cursor.fetchall()
-        
+
         # Display results
         for row in rows:
             print(row)
-            
+
     except MySQLdb.Error as e:
         print(f"Error connecting to MySQL: {e}")
     finally:
         # Close database connection
         if 'db' in locals():
             db.close()
+
 
 if __name__ == "__main__":
     if len(sys.argv) == 4:
