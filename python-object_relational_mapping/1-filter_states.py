@@ -12,7 +12,8 @@ import sys
 
 def filter_states(username, password, db_name):
     """
-    Connects to MySQL database and lists states with names starting with 'N'.
+    Connects to MySQL database and lists states with
+    names starting with 'N'.
 
     Args:
         username (str): MySQL username
