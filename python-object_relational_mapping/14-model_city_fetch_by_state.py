@@ -13,8 +13,10 @@ from sqlalchemy.orm import sessionmaker
 
 def fetch_cities_by_state():
     """
-    Connects to MySQL database using SQLAlchemy and displays all City objects
-    with their corresponding state names, sorted by cities.id in ascending order.
+    Connects to MySQL database using SQLAlchemy
+    and displays all City objects
+    with their corresponding state names,
+    sorted by cities.id in ascending order.
     """
     # Get command line arguments
     username = sys.argv[1]
