@@ -34,7 +34,8 @@ def filter_states(username, password, db_name):
         cursor = db.cursor()
 
         # Execute SQL query to select states starting with uppercase 'N'
-        query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
+        query = """SELECT * FROM states WHERE name
+                 LIKE BINARY 'N%' ORDER BY id ASC"""
         cursor.execute(query)
 
         # Fetch all rows
