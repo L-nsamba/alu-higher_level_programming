@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-This script searches for states matching a given name in the hbtn_0e_0_usa database.
-It takes 4 arguments: MySQL username, password, database name, and state name to search.
+This script searches for states matching a given name in the
+hbtn_0e_0_usa database. It takes 4 arguments: MySQL username,
+password, database name, and state name to search.
 Results are displayed sorted by state ID in ascending order.
 """
 
@@ -33,8 +34,8 @@ def search_states(username, password, db_name, state_name):
         cursor = db.cursor()
         
         # Create and execute SQL query using format
-        query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC".format(state_name)
-        cursor.execute(query)
+        query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC"
+        cursor.execute(query.format(state_name))
         
         # Fetch and display results
         results = cursor.fetchall()
