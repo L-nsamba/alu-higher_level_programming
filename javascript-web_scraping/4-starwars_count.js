@@ -9,11 +9,11 @@ request.get(apiUrl, (err, response, body) => {
     return;
   }
 
-  const data = JSON.parse(body).results;
+  const films = JSON.parse(body).results;
   let count = 0;
 
-  data.forEach(film => {
-    if (film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')) {
+  films.forEach(film => {
+    if (film.characters.some(charUrl => charUrl.endsWith('/18/'))) {
       count++;
     }
   });
