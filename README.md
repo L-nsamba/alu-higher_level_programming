@@ -1,1 +1,1 @@
-### This repository contains all intranet assignmnets for Introduction to Python Programming
+This is the readme file for javascript objects, scopes and closures intranet assignments
